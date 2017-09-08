@@ -23,13 +23,13 @@ public class MakingBricks : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		var bricks = Resources.LoadAll<GameObject>("PreFabs");
+		var bricks = Resources.LoadAll<GameObject>("PreFabsBricks");
 
 		//Cabem 12 bricks em cada inha
 		for (int i = 0; i < 73; i++) {
 	
 			//Escolhe aleatóriamente um tipo de brick da lista
-			int indexBrick = Random.Range (0, 4); 
+			int indexBrick = Random.Range (0, 5	); 
 
 			//Cria o GameObject e adiciona na lista
 			GameObject lo = (GameObject)bricks[indexBrick];
