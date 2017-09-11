@@ -16,6 +16,7 @@ public class Ball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+ 
 		
 	}
 
@@ -23,7 +24,7 @@ public class Ball : MonoBehaviour {
 		//bool b = c.gameObject.CompareTag ("preFabBlueBrick");
 		Debug.Log("Game Object = "+c.otherCollider.gameObject);
 
-		GameObject ball = c.otherCollider.gameObject;
+		GameObject objectball = c.otherCollider.gameObject;
 
 
 		Animator animator = c.gameObject.GetComponent<Animator>();
@@ -32,28 +33,33 @@ public class Ball : MonoBehaviour {
 			Debug.Log("Game Object = "+c.gameObject);
 
 			AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo (0); //GetCurrentAnimatorStateInfo ();
+  
+			//
  
-			//Debug.Log("Name = "+info.);
 
-			//c.gameObject.name.Contains("preFabBlueBrick")
+			if(info.IsName("blue")){
+				objectball.GetComponent<Renderer> ().material.color = Color.blue;
+				//Destroy(c.gameObject);
+			} else if(info.IsName("green")){
+				objectball.GetComponent<Renderer>().material.color = Color.green;
+				//Destroy(c.gameObject);
+			} else if(info.IsName("pink") ){
+				objectball.GetComponent<Renderer> ().material.color = new Color32 (100,255,20,147);
+				//Destroy(c.gameObject);
+			} else if(info.IsName("yellow")){
+				objectball.GetComponent<Renderer>().material.color = Color.yellow;
+				//Destroy(c.gameObject);
+			}
 
-			ball.GetComponent<Renderer>().material.color = Color.yellow;
+		}
 
 
-//			if(info.IsName("blue")){
-//				ball.GetComponent<Renderer> ().material.color = Color.blue;
-//				//Destroy(c.gameObject);
-//			} else if(info.IsName("green")){
-//				ball.GetComponent<Renderer>().material.color = Color.green;
-//				//Destroy(c.gameObject);
-//			} else if(info.IsName("pink") ){
-//				ball.GetComponent<Renderer> ().material.color = Color.grey;
-//				//Destroy(c.gameObject);
-//			} else if(info.IsName("yellow")){
-//				ball.GetComponent<Renderer>().material.color = Color.yellow;
-//				//Destroy(c.gameObject);
-//			}
+		Debug.Log("Color = "+objectball.GetComponent<Renderer> ().material.color);
 
+		if (c.gameObject.name.Contains ("preFabBlueBrick") &&
+			objectball.GetComponent<Renderer> ().material.color == Color.blue) {
+			Destroy(c.gameObject);
+			
 		}
 
 
