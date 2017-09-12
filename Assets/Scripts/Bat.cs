@@ -41,6 +41,9 @@ public class Bat : MonoBehaviour {
 				velocidade * Time.deltaTime);
 
 		}
+
+		float mover = Input.GetAxis ("Horizontal") * velocidade * Time.deltaTime;
+		transform.Translate (mover, 0.0f, 0.0f);
 		
 	}
 }

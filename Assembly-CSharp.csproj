@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Ball.cs" />
      <Compile Include="Assets\Scripts\Bat.cs" />
      <Compile Include="Assets\Scripts\MakingBricks.cs" />
  <Reference Include="UnityEngine.Analytics">
