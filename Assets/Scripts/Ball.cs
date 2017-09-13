@@ -52,10 +52,10 @@ public class Ball : MonoBehaviour {
 				objectball.GetComponent<Renderer>().material.color = Color.green;
 				//Destroy(c.gameObject);
 			} else if(info.IsName("pink") ){
-				objectball.GetComponent<Renderer> ().material.color = new Color32 (100,255,20,147);
+				objectball.GetComponent<Renderer> ().material.color = Color.magenta;
 				//Destroy(c.gameObject);
 			} else if(info.IsName("yellow")){
-				objectball.GetComponent<Renderer>().material.color = Color.yellow;
+				objectball.GetComponent<Renderer>().material.color = Color.yellow; 
 				//Destroy(c.gameObject);
 			}else if(info.IsName("super")){
 				objectball.GetComponent<Renderer>().material.color = Color.grey;
@@ -81,6 +81,11 @@ public class Ball : MonoBehaviour {
 
 		} else if(c.gameObject.name.Contains ("preFabYellowBrick") &&
 			objectball.GetComponent<Renderer> ().material.color == Color.yellow) {
+			Destroy(c.gameObject);
+			ScorePoint ();
+
+		} else if(c.gameObject.name.Contains ("preFabPinkBrick") &&
+			objectball.GetComponent<Renderer> ().material.color == Color.magenta) {
 			Destroy(c.gameObject);
 			ScorePoint ();
 
