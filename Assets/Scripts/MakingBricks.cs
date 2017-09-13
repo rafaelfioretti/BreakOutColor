@@ -19,24 +19,40 @@ public class MakingBricks : MonoBehaviour {
 
 	private int bricksPerRow = 11;
 	private int countBricksInRow = 1;
+	private int blackBricksCount = 0;
 
 	// Use this for initialization
 	void Start () {
 
 		var bricks = Resources.LoadAll<GameObject>("PreFabsBricks");
 
+
 		//Cabem 12 bricks em cada inha
 		for (int i = 0; i < 73; i++) {
-	
+
+
 			//Escolhe aleatóriamente um tipo de brick da lista
-			int indexBrick = Random.Range (0, 5	); 
+			int indexBrick = getRandomBricksColor(); 
+			if (indexBrick == 3) {
+				blackBricksCount++;
+				if (blackBricksCount > 3) {
+					while (indexBrick == 3) {
+						indexBrick = getRandomBricksColor();
+					}
+				}
+			}
 
 			//Cria o GameObject e adiciona na lista
-			GameObject lo = (GameObject)bricks[indexBrick];
-			brickList.Add(lo);
+			GameObject lo = (GameObject)bricks [indexBrick];
+			brickList.Add (lo);
+
 		}
 				
 		transform.position = new Vector2 (posX, posY);
+	}
+
+	int getRandomBricksColor(){
+		return Random.Range (0, 5	); 
 	}
 
 	void SpawnObjects() 
