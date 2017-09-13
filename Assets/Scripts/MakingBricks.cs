@@ -12,7 +12,7 @@ public class MakingBricks : MonoBehaviour {
 
 	private float constantSeparator = 1.25f;
 	private float posX = -6.89f;
-	private float posY = 5.5f;
+	private float posY = 4.5f;
 
 	public static int numBricks = 0;
 	public static List <GameObject> brickList = new List<GameObject>();

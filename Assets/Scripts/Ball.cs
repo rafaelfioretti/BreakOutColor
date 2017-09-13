@@ -62,9 +62,6 @@ public class Ball : MonoBehaviour {
 				//Destroy(c.gameObject);
 			}
 
-
-		
-
 			//Debug.Log ("velocidade = " + ball.velocity.magnitude);
  
 		}
@@ -75,23 +72,28 @@ public class Ball : MonoBehaviour {
 		if (c.gameObject.name.Contains ("preFabBlueBrick") &&
 			objectball.GetComponent<Renderer> ().material.color == Color.blue) {
 			Destroy(c.gameObject);
+			ScorePoint ();
 
 		} else if(c.gameObject.name.Contains ("preFabGreenBrick") &&
 			objectball.GetComponent<Renderer> ().material.color == Color.green) {
 			Destroy(c.gameObject);
+			ScorePoint ();
 
 		} else if(c.gameObject.name.Contains ("preFabYellowBrick") &&
 			objectball.GetComponent<Renderer> ().material.color == Color.yellow) {
 			Destroy(c.gameObject);
+			ScorePoint ();
 
 		} else if(c.gameObject.name.Contains ("preFab") &&
 			objectball.GetComponent<Renderer> ().material.color == Color.grey) {
 			Destroy(c.gameObject);
+			ScorePoint ();
 		} 
 
+	}
 
-
-
+	void ScorePoint(){
+		Score.pontos++;
 	}
 }
 
