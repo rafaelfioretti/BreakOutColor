@@ -35,10 +35,8 @@ public class MakingBricks : MonoBehaviour {
 			int indexBrick = getRandomBricksColor(); 
 			if (indexBrick == 3) {
 				blackBricksCount++;
-				if (blackBricksCount > 3) {
-					while (indexBrick == 3) {
-						indexBrick = getRandomBricksColor();
-					}
+				while (blackBricksCount > 3 && indexBrick == 3) {
+					indexBrick = getRandomBricksColor();
 				}
 			}
 
