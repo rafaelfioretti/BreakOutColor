@@ -30,8 +30,8 @@ public class Ball : MonoBehaviour {
 			return;
 		}
 		
-		Debug.Log("Game Object = "+c.otherCollider.gameObject);
-
+//		Debug.Log("Game Object = "+c.otherCollider.gameObject);
+//
 		GameObject objectball = c.otherCollider.gameObject;
 
 
@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour {
 		Animator animator = c.gameObject.GetComponent<Animator>();
 		if (animator != null) {
 
-			Debug.Log("Game Object = "+c.gameObject);
+			//Debug.Log("Game Object = "+c.gameObject);
 
 			AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo (0); //GetCurrentAnimatorStateInfo ();
 
@@ -67,7 +67,7 @@ public class Ball : MonoBehaviour {
 		}
 
 
-		Debug.Log("Color = "+objectball.GetComponent<Renderer> ().material.color);
+		//Debug.Log("Color = "+objectball.GetComponent<Renderer> ().material.color);
 
 		if (c.gameObject.name.Contains ("preFabBlueBrick") &&
 			objectball.GetComponent<Renderer> ().material.color == Color.blue) {
@@ -100,5 +100,7 @@ public class Ball : MonoBehaviour {
 	void ScorePoint(){
 		Score.pontos++;
 	}
+
+ 
 }
 
