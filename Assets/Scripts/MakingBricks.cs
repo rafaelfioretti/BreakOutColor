@@ -47,6 +47,7 @@ public class MakingBricks : MonoBehaviour {
 		}
 				
 		transform.position = new Vector2 (posX, posY);
+		Score.pontos = brickList.Capacity;
 	}
 
 	int getRandomBricksColor(){

@@ -18,7 +18,7 @@ public class Floor : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D c){
 		Debug.Log ("Entrou2!! "+c.gameObject.name);
 
-		if (c.gameObject.name.Contains ("ball_silver")) {
+		if (c.gameObject.name.Contains ("Main_Ball")) {
 			SceneManager.LoadScene ("Intro");
 		}
 	}
