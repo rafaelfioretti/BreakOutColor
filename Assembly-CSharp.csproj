@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Ball.cs" />
      <Compile Include="Assets\Scripts\Bat.cs" />
+     <Compile Include="Assets\Scripts\Enter.cs" />
      <Compile Include="Assets\Scripts\MakingBricks.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
  <Reference Include="UnityEngine.Analytics">
