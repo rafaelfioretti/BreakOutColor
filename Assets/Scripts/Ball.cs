@@ -73,7 +73,7 @@ public class Ball : MonoBehaviour {
 	//destroy and score
 	void ScorePoint(GameObject go){
 		Destroy(go);
-		Score.pontos--;
+		Score.pontos -= 10;
 		if (Score.pontos == 0) {
 			SceneManager.LoadScene ("Intro");
 		}
