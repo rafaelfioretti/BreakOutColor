@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ball = GetComponent<Rigidbody2D> ();
-		ball.AddForce (new Vector2 (1f, 0.5f) * Time.deltaTime * force);
+		ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * force);
 	}
 
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour {
 
 		//avoid the ball to be stucked horizontally
 		if(c.gameObject.name.Contains ("wall")){
-			ball.AddForce (new Vector2 (1f, 0.5f) * Time.deltaTime * 0);
+			ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * 0);
 			return;
 		}
  
