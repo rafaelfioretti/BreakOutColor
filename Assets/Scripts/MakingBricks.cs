@@ -17,7 +17,7 @@ public class MakingBricks : MonoBehaviour {
 	public static int numBricks = 0;
 	public static List <GameObject> brickList = new List<GameObject>();
 
-	private int bricksPerRow = 14;
+	private int bricksPerRow = 13;
 	private int countBricksInRow = 1;
 	private int blackBricksCount = 0;
 
@@ -25,7 +25,7 @@ public class MakingBricks : MonoBehaviour {
 
 		var bricks = Resources.LoadAll<GameObject>("PreFabsBricks");
 
-		for (int i = 0; i < 90; i++) {
+		for (int i = 0; i < 85; i++) {
 
 			
 			//Escolhe aleatóriamente um tipo de brick da lista

@@ -12,6 +12,8 @@ public class Ball : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Score.pontos = 0;
+
 		ball = GetComponent<Rigidbody2D> ();
 		ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * force);
 	}
