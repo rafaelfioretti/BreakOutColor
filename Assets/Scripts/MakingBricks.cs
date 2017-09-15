@@ -11,13 +11,13 @@ public class MakingBricks : MonoBehaviour {
 	public GameObject preFabUnbreakableBrick;
 
 	private float constantSeparator = 1.25f;
-	private float posX = -6.89f;
+	private float posX = -8.2f;//-6.89f;
 	private float posY = 4.5f;
 
 	public static int numBricks = 0;
 	public static List <GameObject> brickList = new List<GameObject>();
 
-	private int bricksPerRow = 11;
+	private int bricksPerRow = 13;//11;
 	private int countBricksInRow = 1;
 	private int blackBricksCount = 0;
 
@@ -47,6 +47,7 @@ public class MakingBricks : MonoBehaviour {
 		}
 				
 		transform.position = new Vector2 (posX, posY);
+		Score.pontos = brickList.Capacity;
 	}
 
 	int getRandomBricksColor(){
