@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour {
+public class Life : MonoBehaviour {
 
-	public static int pontos;
-	public Text txtPontos;
+	public static int vidas;
+	public Text txtVidas;
 
 
 	// Use this for initialization
 	void Start () {
-		pontos = 0;
+		vidas = 5;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		txtPontos.text  = pontos.ToString();
+		txtVidas.text = vidas.ToString ();
+		if (vidas == 1) {
+			txtVidas.color = Color.red;
+		} else {
+		}
 	}
 }

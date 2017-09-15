@@ -7,7 +7,6 @@ public class Floor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -16,9 +15,8 @@ public class Floor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
-		Debug.Log ("Entrou2!! "+c.gameObject.name);
-
-		if (c.gameObject.name.Contains ("Main_Ball")) {
+		Life.vidas = Life.vidas - 1;
+		if (Life.vidas == 0) {
 			SceneManager.LoadScene ("Intro");
 		}
 	}

@@ -16,13 +16,10 @@ public class Ball : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-
 	}
 
+
 	void OnCollisionEnter2D(Collision2D c){
-
-
 		//avoid the ball to be stucked horizontally
 		if(c.gameObject.name.Contains ("wall")){
 			ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * 0);
@@ -67,18 +64,38 @@ public class Ball : MonoBehaviour {
 			objectball.GetComponent<Renderer> ().material.color == Color.grey) {
 			ScorePoint(c.gameObject);
 		} 
-
 	}
 
 	//destroy and score
 	void ScorePoint(GameObject go){
 		Destroy(go);
-		Score.pontos -= 10;
-		if (Score.pontos == 0) {
-			SceneManager.LoadScene ("Intro");
-		}
+		Score.pontos += 10;
 	}
 
- 
+
+	void OnTriggerEnter2D(Collider2D c){
+		PauseAndResume ();
+		transform.position = new Vector2 (-0.24f,-1.36f);
+	}
+
+
+	void PauseAndResume(){
+		Time.timeScale = 0;
+		StartCoroutine(ResumeAfterNSeconds(3.0f));
+		ball.velocity = new Vector3(0, 10, 0);
+		ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * 0);
+	}
+
+	float timer = 0;
+	IEnumerator ResumeAfterNSeconds(float timePeriod){
+		yield return new WaitForEndOfFrame();
+		timer += Time.unscaledDeltaTime;
+		if (timer < timePeriod)
+			StartCoroutine (ResumeAfterNSeconds (0.5f));
+		else {
+			Time.timeScale = 1; 
+			timer = 0;
+		}
+	}
 }
 

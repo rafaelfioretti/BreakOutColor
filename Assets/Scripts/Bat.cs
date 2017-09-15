@@ -6,17 +6,12 @@ public class Bat : MonoBehaviour {
 
 	public float velocidade;
 
-	Rigidbody2D rb;
 	Vector3 posicaoInicial;
 	Vector3 posicaoMouse;
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D> ();
 		posicaoInicial = transform.position;
-
-
-		
 	}
 	
 	// Update is called once per frame
