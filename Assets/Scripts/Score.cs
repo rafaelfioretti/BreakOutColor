@@ -9,11 +9,6 @@ public class Score : MonoBehaviour {
 	public Text txtPontos;
 
 
-	// Use this for initialization
-	void Start () {
-		pontos = 0;
-	}
-	
 	// Update is called once per frame
 	void Update () {
 		txtPontos.text  = pontos.ToString();
