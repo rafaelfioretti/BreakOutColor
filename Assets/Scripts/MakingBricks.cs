@@ -11,30 +11,36 @@ public class MakingBricks : MonoBehaviour {
 	public GameObject preFabUnbreakableBrick;
 
 	private float constantSeparator = 1.25f;
-	private float posX = -8.2f;//-6.89f;
+	private float posX = -8.2f;
 	private float posY = 4.5f;
 
 	public static int numBricks = 0;
 	public static List <GameObject> brickList = new List<GameObject>();
 
-	private int bricksPerRow = 13;//11;
+	private int bricksPerRow = 14;
 	private int countBricksInRow = 1;
 	private int blackBricksCount = 0;
 
-	// Use this for initialization
 	void Start () {
 
 		var bricks = Resources.LoadAll<GameObject>("PreFabsBricks");
 
+		for (int i = 0; i < 90; i++) {
 
-		//Cabem 12 bricks em cada inha
-		for (int i = 0; i < 73; i++) {
-
-
+			
 			//Escolhe aleatóriamente um tipo de brick da lista
 			int indexBrick = getRandomBricksColor(); 
+
+			//Brick Preto (Unbreakable) somente após a terceira linha 
+			while (indexBrick == 3 && i <= 28) {
+				indexBrick = getRandomBricksColor();
+			}
+
+
 			if (indexBrick == 3) {
 				blackBricksCount++;
+
+				//Somente 3 Unbreakable na Tela
 				while (blackBricksCount > 3 && indexBrick == 3) {
 					indexBrick = getRandomBricksColor();
 				}
@@ -69,7 +75,7 @@ public class MakingBricks : MonoBehaviour {
 
 			if (countBricksInRow == bricksPerRow) {
 				posY = posY - 0.6f;
-				posX = -8.14f;
+				posX = -9.45f;
 				countBricksInRow = 0;
 			} else {
 				countBricksInRow++;
