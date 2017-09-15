@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour {
 	Rigidbody2D ball;
 	public float force;
 	public GameObject ploopSound;
+	public GameObject barra;
 
 	// Use this for initialization
 	void Start () {
@@ -78,8 +79,8 @@ public class Ball : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D c){
 		ball.velocity = Vector3.zero;
 		ball.transform.position = new Vector2 (-0.24f,-1.36f);
-		System.Threading.Thread.Sleep(1000);
-		ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * 0);
+		barra.transform.position = new Vector2 (-0.22f,-3.32f);
+		ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * 2);
 	}
 
 }

@@ -19,6 +19,7 @@ public class Floor : MonoBehaviour {
 		Instantiate (lostLifeSound, transform.position, transform.rotation);
 		Life.vidas = Life.vidas - 1;
 		if (Life.vidas == 0) {
+			Recorde.pontos = Score.pontos;
 			SceneManager.LoadScene ("Intro");
 		}
 	}

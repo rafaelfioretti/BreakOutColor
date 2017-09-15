@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Floor.cs" />
      <Compile Include="Assets\Scripts\Life.cs" />
      <Compile Include="Assets\Scripts\MakingBricks.cs" />
+     <Compile Include="Assets\Scripts\Recorde.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
