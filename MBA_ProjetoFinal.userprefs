@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ball.cs">
     <Files>
-      <File FileName="Assets/Scripts/Ball.cs" Line="94" Column="44" />
+      <File FileName="Assets/Scripts/Ball.cs" Line="80" Column="1" />
       <File FileName="Assets/Scripts/Score.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MakingBricks.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/MakingBricks.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Bat.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Floor.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scripts/Floor.cs" Line="19" Column="14" />
       <File FileName="Assets/Scripts/Life.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Floor : MonoBehaviour {
 
+	public GameObject lostLifeSound;
 	// Use this for initialization
 	void Start () {
 	}
@@ -15,6 +16,7 @@ public class Floor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
+		Instantiate (lostLifeSound, transform.position, transform.rotation);
 		Life.vidas = Life.vidas - 1;
 		if (Life.vidas == 0) {
 			SceneManager.LoadScene ("Intro");

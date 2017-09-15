@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour {
 
 	Rigidbody2D ball;
 	public float force;
+	public GameObject ploopSound;
 
 	// Use this for initialization
 	void Start () {
@@ -68,34 +69,17 @@ public class Ball : MonoBehaviour {
 
 	//destroy and score
 	void ScorePoint(GameObject go){
+		Instantiate (ploopSound, transform.position, transform.rotation);
 		Destroy(go);
 		Score.pontos += 10;
 	}
 
 
 	void OnTriggerEnter2D(Collider2D c){
-		PauseAndResume ();
-		transform.position = new Vector2 (-0.24f,-1.36f);
-	}
-
-
-	void PauseAndResume(){
-		Time.timeScale = 0;
-		StartCoroutine(ResumeAfterNSeconds(3.0f));
-		ball.velocity = new Vector3(0, 10, 0);
+		ball.velocity = Vector3.zero;
+		ball.transform.position = new Vector2 (-0.24f,-1.36f);
+		System.Threading.Thread.Sleep(1000);
 		ball.AddForce (new Vector3 (1f, 0.5f) * Time.deltaTime * 0);
 	}
 
-	float timer = 0;
-	IEnumerator ResumeAfterNSeconds(float timePeriod){
-		yield return new WaitForEndOfFrame();
-		timer += Time.unscaledDeltaTime;
-		if (timer < timePeriod)
-			StartCoroutine (ResumeAfterNSeconds (0.5f));
-		else {
-			Time.timeScale = 1; 
-			timer = 0;
-		}
-	}
 }
-
